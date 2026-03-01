@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NECTAR — Gradation Water Glass Gift Set</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --sunset-top: #e8734a;
+  --sunset-mid: #f5c35a;
+  --sunset-bottom: #fef3d0;
+  --ocean-top: #2a5a8f;
+  --ocean-mid: #6b8fb5;
+  --ocean-bottom: #d4a574;
+  --cream: #f8f5f0;
+  --dark: #1a1a1a;
+  --text: #333;
+  --text-light: #777;
+  --accent: #c4544a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--text);
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif { font-family: 'Cormorant Garamond', serif; }
+
+/* ── NAVIGATION ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.2rem clamp(20px, 5vw, 60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.3s;
+}
+nav.hidden { transform: translateY(-100%); }
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--dark);
+  text-decoration: none;
+}
+.nav-cta {
+  padding: 8px 24px;
+  background: var(--dark);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+}
+.nav-cta:hover { background: var(--accent); }
+
+/* ── HERO: GIFT-FIRST ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px clamp(20px, 8vw, 120px) 60px;
+  background: linear-gradient(160deg, #fef9f3 0%, #fff 40%, #f5f0eb 100%);
+  position: relative;
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 6vw, 100px);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-badges { justify-content: center; }
+  .hero-ctas { justify-content: center; }
+}
+
+.hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+.hero-text h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  line-height: 1.8;
+  color: var(--text-light);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.hero-badges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.badge {
+  padding: 6px 16px;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  font-weight: 400;
+  background: rgba(255,255,255,0.7);
+}
+.badge.accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--dark);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  transition: all 0.3s;
+  border: 1px solid var(--dark);
+}
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+.btn-secondary {
+  display: inline-block;
+  padding: 16px 40px;
+  background: transparent;
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+}
+.btn-secondary:hover { border-color: var(--dark); }
+
+/* Hero Visual — Two glasses in gift box */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.gift-box {
+  width: clamp(280px, 30vw, 420px);
+  aspect-ratio: 4/5;
+  background: linear-gradient(145deg, #f2ece5, #e8e0d5);
+  border-radius: 8px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.08), 0 2px 0 #d4ccc2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 24px);
+  position: relative;
+  overflow: hidden;
+}
+.gift-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  opacity: 0.3;
+}
+.gift-box::after {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0.3;
+}
+.mini-glass {
+  width: clamp(60px, 8vw, 100px);
+  aspect-ratio: 7/16;
+  border-radius: 6px 6px 2px 2px;
+  z-index: 1;
+}
+.mini-lighting {
+  background: linear-gradient(180deg, var(--sunset-top) 0%, var(--sunset-mid) 60%, var(--sunset-bottom) 100%);
+  box-shadow: 0 20px 40px rgba(232,115,74,0.15);
+}
+.mini-oasis {
+  background: linear-gradient(180deg, var(--ocean-top) 0%, var(--ocean-mid) 50%, var(--ocean-bottom) 100%);
+  box-shadow: 0 20px 40px rgba(42,90,143,0.15);
+}
+.gift-label {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.7rem, 1vw, 0.85rem);
+  letter-spacing: 0.25em;
+  color: #a09080;
+  z-index: 1;
+}
+
+/* ── SECTION COMMON ── */
+section { padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px); }
+.section-dark { background: var(--dark); color: #fff; }
+.section-cream { background: var(--cream); }
+.container { max-width: 960px; margin: 0 auto; }
+.section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+.section-dark .section-label { color: #666; }
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.35;
+  margin-bottom: 1.5rem;
+}
+p { font-size: 0.93rem; line-height: 1.85; font-weight: 300; color: var(--text-light); }
+.section-dark p { color: #aaa; }
+.divider { width: 40px; height: 1px; background: #ccc; margin: 2rem auto; }
+.section-dark .divider { background: #444; }
+
+/* ── PACKAGE (moved up — right after hero) ── */
+.package-section { background: #111; color: #fff; }
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  margin-top: 3rem;
+}
+.package-item {
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+.package-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+.package-item h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.package-item p {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ── RISK REMOVAL ── */
+.risk-section { background: var(--cream); }
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.risk-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+.risk-card .risk-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.risk-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 0.8rem;
+}
+.risk-card p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.risk-detail {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: #aaa;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── TWO COLUMN ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: center;
+}
+@media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+.glass-visual {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 7/15;
+  border-radius: 10px 10px 3px 3px;
+  margin: 0 auto;
+}
+.glass-sunset {
+  background: linear-gradient(180deg, var(--sunset-top) 0%, var(--sunset-mid) 60%, var(--sunset-bottom) 100%);
+  box-shadow: 0 30px 60px rgba(232,115,74,0.15);
+}
+.glass-ocean {
+  background: linear-gradient(180deg, var(--ocean-top) 0%, var(--ocean-mid) 50%, var(--ocean-bottom) 100%);
+  box-shadow: 0 30px 60px rgba(42,90,143,0.15);
+}
+
+/* ── COLORS ── */
+.color-options {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+.color-swatch {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.color-swatch:hover { transform: scale(1.12); }
+.swatch-lighting { background: linear-gradient(135deg, var(--sunset-top), var(--sunset-mid), var(--sunset-bottom)); }
+.swatch-oasis { background: linear-gradient(135deg, var(--ocean-top), var(--ocean-mid), var(--ocean-bottom)); }
+.color-name { font-size: 0.72rem; text-align: center; margin-top: 0.6rem; letter-spacing: 0.12em; color: var(--text-light); }
+
+/* ── CHECKPOINTS ── */
+.checkpoints {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.checkpoint {
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+}
+.checkpoint-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--sunset-mid);
+  margin-bottom: 0.5rem;
+}
+.checkpoint h3 { color: #fff; font-weight: 400; font-size: 1rem; }
+.checkpoint p { color: #888; font-size: 0.85rem; }
+
+/* ── SPECS ── */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.spec-item { padding: 1.5rem 0; border-bottom: 1px solid #e0dcd6; }
+.spec-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.3rem; }
+.spec-value { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--dark); }
+
+/* ── BRAND ── */
+.brand-statement { text-align: center; max-width: 700px; margin: 0 auto; }
+.brand-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* ── TAGLINE ── */
+.tagline-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--ocean-top) 0%, var(--ocean-mid) 60%, var(--ocean-bottom) 100%);
+}
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 700px;
+  color: #fff;
+}
+
+/* ── CARE ── */
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.care-item { text-align: center; }
+.care-icon {
+  width: 48px; height: 48px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.2rem;
+}
+
+/* ── CTA ── */
+.cta-section { text-align: center; padding: clamp(80px, 12vw, 160px) 20px; background: var(--cream); }
+.cta-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 300;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+.cta-price-sub { font-size: 0.85rem; color: var(--text-light); margin-bottom: 2.5rem; }
+
+/* ── SHIPPING ── */
+.shipping-info { font-size: 0.85rem; line-height: 2; color: #888; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 3rem 20px;
+  text-align: center;
+  background: var(--dark);
+  color: #555;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* ── Animations ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float { animation: float 5s ease-in-out infinite; }
+
+/* ── IMAGE PLACEHOLDERS ── */
+.img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #f0ebe5, #e5ddd3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+/* ── LIFESTYLE QUOTE ── */
+.lifestyle-strip {
+  padding: clamp(40px, 8vw, 80px) 20px;
+  text-align: center;
+  background: #fff;
+}
+.lifestyle-strip blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--text-light));
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">NECTAR</a>
+  <a href="#order" class="nav-cta">선물하기</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- HERO — GIFT-FIRST -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>받는 사람의 테이블을<br>바꾸는 <em>선물.</em></h1>
+      <p class="hero-sub">
+        그라데이션 워터 글라스 2P 세트.<br>
+        패키지까지 완성된 Gift-ready 구성.
+      </p>
+      <div class="hero-badges">
+        <span class="badge accent">2P 세트</span>
+        <span class="badge">Gift Package</span>
+        <span class="badge">Lead-free Crystal</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#order" class="btn-primary">선물하기 (2P 세트)</a>
+        <a href="#package" class="btn-secondary">언박싱 보기</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="gift-box float">
+        <div class="mini-glass mini-lighting"></div>
+        <div class="mini-glass mini-oasis"></div>
+        <div class="gift-label">NECTAR</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-down"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- PACKAGE — MOVED UP (right after hero) -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="package-section" id="package">
+  <div class="container fade-in">
+    <div class="section-label" style="color:#555">02 — Gift Set</div>
+    <h2>열자마자 완성되는<br>선물 구성</h2>
+    <div class="package-grid">
+      <div class="package-item">
+        <div class="package-icon">📦</div>
+        <h3>레드 그라데이션 패키지 박스</h3>
+        <p>열어보는 순간, 이미 예쁜 언박싱 경험</p>
+      </div>
+      <div class="package-item">
+        <div class="package-icon">🥂</div>
+        <h3>그라데이션 워터 글라스 2P</h3>
+        <p>Lighting + Oasis 두 가지 컬러</p>
+      </div>
+      <div class="package-item">
+        <div class="package-icon">💌</div>
+        <h3>메시지 카드</h3>
+        <p>기본 포함 · 마음을 전하세요</p>
+      </div>
+      <div class="package-item">
+        <div class="package-icon">📄</div>
+        <h3>보증서</h3>
+        <p>넥타 공식 품질 보증서</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- RISK REMOVAL — 선물 리스크 제거 -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="risk-section">
+  <div class="container fade-in">
+    <div class="section-label">03 — No worries</div>
+    <h2>선물 고민,<br>전부 해결했어요.</h2>
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-icon">🎨</div>
+        <h3>취향 걱정 없게</h3>
+        <p>물 · 하이볼 · 와인 · 주스<br>어떤 음료를 담아도 컬러가 살아나는<br>유니버설 글라스 디자인.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon">📦</div>
+        <h3>파손 걱정 없게</h3>
+        <p>충격 흡수 안전 포장 적용.<br>파손 시 무상 교환.<br>수령 후 7일 이내 반품 가능.</p>
+        <div class="risk-detail">교환/반품 정책 자세히 보기 →</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon">✅</div>
+        <h3>성분 걱정 없게</h3>
+        <p>리드프리(Lead-free) 크리스탈.<br>납 성분 zero, 안심하고 사용하세요.</p>
+        <div class="risk-detail">인증 정보 자세히 보기 →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- PRODUCT — Colors -->
+<!-- ═══════════════════════════════════════════════ -->
+<section style="background:#fff; text-align:center">
+  <div class="container fade-in">
+    <div class="section-label">04 — Colors</div>
+    <h2>두 가지 무드,<br>하나의 순간</h2>
+    <p>따스한 노을과 깊은 바다. 일상에 감성을 더하는 두 가지 컬러.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,4vw,60px); margin-top:3rem; align-items:end">
+      <div class="fade-in" style="text-align:center">
+        <div class="glass-visual glass-sunset" style="max-width:160px; margin:0 auto"></div>
+        <p style="margin-top:1.5rem; font-size:0.8rem; letter-spacing:0.15em; color:var(--text-light)">LIGHTING</p>
+        <p style="font-size:0.78rem; color:#bbb; margin-top:0.3rem">따스한 노을빛</p>
+      </div>
+      <div class="fade-in" style="text-align:center">
+        <div class="glass-visual glass-ocean" style="max-width:160px; margin:0 auto"></div>
+        <p style="margin-top:1.5rem; font-size:0.8rem; letter-spacing:0.15em; color:var(--text-light)">OASIS</p>
+        <p style="font-size:0.78rem; color:#bbb; margin-top:0.3rem">깊은 바다빛</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE QUOTE -->
+<section class="tagline-section">
+  <div class="fade-in">
+    <div class="tagline">
+      "Nectar is a moment of ease<br>in the rhythm of the city."
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- STORY -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-dark">
+  <div class="container two-col">
+    <div class="fade-in">
+      <div class="section-label">05 — Story</div>
+      <h2>빛과 감정이 머무는<br>순간을 담은 오브제</h2>
+      <p>
+        물 한 잔도 더 감각적으로 즐기게 하는,<br>
+        실용성과 오브제 미학을 동시에 담은 디자인.<br><br>
+        어떤 음료를 담아도 컬러가 살아나는<br>
+        아름다운 그라데이션은 테이블 위 대화의 시작이 됩니다.
+      </p>
+    </div>
+    <div class="fade-in" style="text-align:center">
+      <div class="glass-visual glass-sunset" style="max-width:200px; animation: float 6s ease-in-out infinite;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- CHECK POINTS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-dark" style="background:#111">
+  <div class="container fade-in">
+    <div class="section-label" style="color:#444">06 — Check Point</div>
+    <h2>NECTAR가 특별한 이유</h2>
+    <div class="checkpoints">
+      <div class="checkpoint">
+        <div class="checkpoint-num">1</div>
+        <h3>프리미엄 리드프리 크리스탈</h3>
+        <p>납을 포함하지 않은 안전한 소재로 제작</p>
+      </div>
+      <div class="checkpoint">
+        <div class="checkpoint-num">2</div>
+        <h3>묵직한 듀랑 크리스탈</h3>
+        <p>가벼운 강화유리와 달리 고급스러운 무게감</p>
+      </div>
+      <div class="checkpoint">
+        <div class="checkpoint-num">3</div>
+        <h3>한 손에 완벽한 크기</h3>
+        <p>200ml 용량, 최적의 그립감으로 설계</p>
+      </div>
+      <div class="checkpoint">
+        <div class="checkpoint-num">4</div>
+        <h3>시그니처 그라데이션</h3>
+        <p>넥타만의 컨템포러리 컬러 디자인</p>
+      </div>
+      <div class="checkpoint">
+        <div class="checkpoint-num">5</div>
+        <h3>Gift-Ready 패키지</h3>
+        <p>따로 포장할 필요 없는 완성형 선물 구성</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SPECS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-cream">
+  <div class="container fade-in">
+    <div class="section-label">07 — Specifications</div>
+    <h2>제품 사양</h2>
+    <div class="specs-grid">
+      <div class="spec-item">
+        <div class="spec-label">Material</div>
+        <div class="spec-value">Lead-Free Crystal</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Weight</div>
+        <div class="spec-value">270g</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Size</div>
+        <div class="spec-value">Ø 70 × H 150 mm</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Capacity</div>
+        <div class="spec-value">200ml</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Colors</div>
+        <div class="spec-value">Lighting · Oasis</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Certification</div>
+        <div class="spec-value">Lead-Free Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- BRAND -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-dark">
+  <div class="container brand-statement fade-in">
+    <div class="brand-en">Spread the message of authentic luxury living</div>
+    <h2>NECTAR</h2>
+    <div class="divider"></div>
+    <p>
+      NECTAR는 와인 글라스를 시작으로<br>
+      당신에게 새로운 리듬을 더하는 리프레시웨어 브랜드입니다.<br><br>
+      고급스러운 소재와 타협하지 않는 품질 기준,<br>
+      넥타만의 시선으로 재해석한 컨템포러리 디자인으로<br>
+      오래도록 곁에 두고 싶은 제품을 만듭니다.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- CARE -->
+<!-- ═══════════════════════════════════════════════ -->
+<section style="background:#fff">
+  <div class="container fade-in">
+    <div class="section-label">08 — How to Care</div>
+    <h2>관리 방법</h2>
+    <div class="care-grid">
+      <div class="care-item">
+        <div class="care-icon">🌡️</div>
+        <h3>온도 주의</h3>
+        <p style="font-size:0.83rem">급격한 온도 변화를 피해주세요.<br>전자레인지 사용 불가.</p>
+      </div>
+      <div class="care-item">
+        <div class="care-icon">🧽</div>
+        <h3>부드럽게 세척</h3>
+        <p style="font-size:0.83rem">중성세제 + 부드러운 스폰지로<br>손세척을 권장합니다.</p>
+      </div>
+      <div class="care-item">
+        <div class="care-icon">📦</div>
+        <h3>개별 보관</h3>
+        <p style="font-size:0.83rem">겹쳐 보관하지 마시고<br>개별 보관해 주세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- CTA / ORDER -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cta-section" id="order">
+  <div class="container fade-in">
+    <div class="section-label">Order</div>
+    <h2 style="margin-bottom:0.5rem">선물은 '쓸 때마다'<br>기억나는 걸로.</h2>
+    <div class="divider"></div>
+    <div class="cta-price">₩150,000</div>
+    <div class="cta-price-sub">Gradation Water Glass 2P Set · 무료배송</div>
+    <a href="#" class="btn-primary" style="margin-bottom:1rem">선물하기 (2P 세트)</a>
+    <br><br>
+    <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap">
+      <span class="badge accent">2P 세트</span>
+      <span class="badge">Gift Package 포함</span>
+      <span class="badge">무료배송</span>
+      <span class="badge">안전 포장</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SHIPPING -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="section-dark">
+  <div class="container fade-in" style="max-width:700px">
+    <div class="section-label" style="color:#444">배송 안내</div>
+    <div class="shipping-info">
+      <p>· 주문제작 상품으로 결제일로부터 1~2주 이내 순차 출고</p>
+      <p>· 150,000원 이상 구매 시 무료 배송</p>
+      <p>· 도서산간 지역은 별도 배송비 발생 가능</p>
+      <br>
+      <p style="color:#555; font-size:0.78rem">교환/반품: 수령 후 7일 이내 가능. 단순변심 시 왕복 택배비 고객 부담.</p>
+      <p style="color:#555; font-size:0.78rem">파손 수령 시 무상 교환 처리됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">NECTAR</div>
+  <p>주식회사 아르피노(ARFINO) | 대표이사 : 황수연</p>
+  <p>서울특별시 강남구 강남대로 464 (역삼동)</p>
+  <p>hello@nectarofficial.com | 02-2028-8399</p>
+  <p style="margin-top:1rem; color:#444">© 2026 NECTAR. All rights reserved.</p>
+  <p style="color:#333; margin-top:0.3rem">SPREAD THE MESSAGE OF AUTHENTIC LUXURY LIVING</p>
+</footer>
+
+<script>
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Hide/show nav on scroll
+let lastY = 0;
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  const y = window.scrollY;
+  nav.classList.toggle('hidden', y > lastY && y > 100);
+  lastY = y;
+});
+</script>
+</body>
+</html>
