@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NECTAR — Floral Water Glass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #f8f5f0;
+  --dark: #1a1a1a;
+  --text: #333;
+  --text-light: #777;
+  --red: #8B2332;
+  --red-light: #A63D4E;
+  --gold: #C4A265;
+  --green: #2D4A2D;
+  --white: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.serif { font-family: 'Cormorant Garamond', serif; }
+
+/* ═══ HERO ═══ */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(139,35,50,0.15) 0%, transparent 70%);
+}
+.hero-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 7vw, 80px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  margin-top: 12px;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.3);
+  font-size: 12px;
+  letter-spacing: 3px;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:0.7} }
+
+/* ═══ TAGLINE SECTION ═══ */
+.tagline {
+  padding: 120px 24px;
+  text-align: center;
+  background: var(--white);
+}
+.tagline p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.tagline .kr {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-size: clamp(14px, 2vw, 17px);
+  color: var(--text-light);
+  margin-top: 24px;
+  display: block;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* ═══ IMAGE SECTIONS ═══ */
+.full-image {
+  width: 100%;
+  overflow: hidden;
+}
+.full-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.full-image.dark { background: var(--dark); }
+.full-image.red { background: var(--red); }
+.full-image.contained {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══ SPLIT SECTION ═══ */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+.split-image {
+  overflow: hidden;
+  position: relative;
+}
+.split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.split-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+}
+.split-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.split-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-light);
+  font-weight: 300;
+}
+.split-text .label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* ═══ VARIANTS ═══ */
+.variants {
+  padding: 120px 24px;
+  background: var(--cream);
+  text-align: center;
+}
+.variants h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.variants .subtitle {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+.variant-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.variant-card {
+  text-align: center;
+}
+.variant-card .flower-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.variant-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.variant-card .kr-name {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+.variant-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-light);
+  font-weight: 300;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* ═══ SPEC ═══ */
+.spec {
+  padding: 100px 24px;
+  background: var(--dark);
+  color: var(--white);
+}
+.spec-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.spec h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 48px;
+  text-align: center;
+  color: var(--gold);
+}
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 60px;
+}
+.spec-item {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 16px;
+}
+.spec-item .label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+}
+.spec-item .value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* ═══ QUOTE ═══ */
+.quote {
+  padding: 140px 24px;
+  text-align: center;
+  background: var(--red);
+  color: var(--white);
+}
+.quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.quote .attr {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-size: 13px;
+  margin-top: 24px;
+  opacity: 0.6;
+  letter-spacing: 2px;
+}
+
+/* ═══ GIFT ═══ */
+.gift {
+  padding: 120px 24px;
+  text-align: center;
+  background: var(--white);
+}
+.gift h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.gift .subtitle {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 48px;
+}
+.gift-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto 48px;
+}
+.gift-item {
+  text-align: center;
+  padding: 32px 20px;
+  border: 1px solid #eee;
+}
+.gift-item .icon { font-size: 32px; margin-bottom: 12px; }
+.gift-item h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.gift-item p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ═══ CARE ═══ */
+.care {
+  padding: 100px 24px;
+  background: var(--cream);
+}
+.care-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.care h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.care-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.care-item .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--gold);
+  font-weight: 600;
+  min-width: 32px;
+}
+.care-item p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+/* ═══ CTA ═══ */
+.cta {
+  padding: 120px 24px;
+  text-align: center;
+  background: var(--dark);
+  color: var(--white);
+}
+.cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.cta .price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.cta .price-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 40px;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 18px 60px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.cta-btn:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* ═══ FOOTER ═══ */
+footer {
+  padding: 60px 24px;
+  text-align: center;
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+footer .brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+footer p {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  line-height: 2;
+}
+footer a {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+  .split { grid-template-columns: 1fr; }
+  .split-text { padding: 60px 24px; }
+  .variant-grid { grid-template-columns: 1fr; gap: 48px; }
+  .spec-grid { grid-template-columns: 1fr; }
+  .gift-items { grid-template-columns: 1fr; }
+}
+
+/* ═══ ANIMATIONS ═══ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-brand">NECTAR</div>
+  <h1><em>Floral</em><br>Water Glass</h1>
+  <p class="hero-sub">테이블을 부드럽게 밝혀주는 플로럴 글라스</p>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ═══ TAGLINE ═══ -->
+<section class="tagline fade-in">
+  <p>Nectar is a moment<br>of ease in the rhythm<br>of the city.</p>
+  <span class="kr">바쁜 도시의 리듬 속,<br>한 잔이 만드는 작은 여유.</span>
+</section>
+
+<!-- ═══ PRODUCT INTRO ═══ -->
+<section class="split">
+  <div class="split-text fade-in" style="background: var(--cream);">
+    <div class="label">About</div>
+    <h2>꽃이 피어오르는<br>순간을 담은 잔</h2>
+    <p>
+      Floral Water Glass는 투명한 크리스탈 위에 꽃의 실루엣을 새긴 글라스입니다.
+      물, 주스, 하이볼 — 무엇을 담아도 테이블 위에 작은 정원이 펼쳐집니다.
+      <br><br>
+      리드프리 크리스탈 소재로 안전하고, 가벼운 95g의 무게로 매일 부담 없이 사용할 수 있습니다.
+      NECTAR가 제안하는 가장 쉬운 테이블 변화, 플로럴 워터 글라스.
+    </p>
+  </div>
+  <div class="split-image">
+    <!-- placeholder for product image -->
+    <div style="width:100%;height:100%;min-height:500px;background:linear-gradient(180deg, #f5f3ef 0%, #e8e4dd 100%);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:72px;color:rgba(0,0,0,0.08);font-style:italic;">Floral</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RED QUOTE ═══ -->
+<section class="quote">
+  <p>빛과 감정이 머무는<br>순간을 담은 오브제</p>
+  <div class="attr">NECTAR · REFRESH-WARE</div>
+</section>
+
+<!-- ═══ TWO VARIANTS ═══ -->
+<section class="variants fade-in">
+  <h2>Two Florals</h2>
+  <p class="subtitle">두 송이의 이야기, 하나의 세트</p>
+  <div class="variant-grid">
+    <div class="variant-card">
+      <div class="flower-icon">🌷</div>
+      <h3>Kas</h3>
+      <p class="kr-name">카스 · 카사블랑카 백합</p>
+      <p>
+        우아하게 피어오르는 카사블랑카 백합의 실루엣.
+        넓게 펼쳐진 꽃잎이 크리스탈 위에서 빛을 받아
+        테이블에 고요한 화려함을 더합니다.
+      </p>
+    </div>
+    <div class="variant-card">
+      <div class="flower-icon">🤍</div>
+      <h3>Muguet</h3>
+      <p class="kr-name">뮤게 · 은방울꽃</p>
+      <p>
+        작고 여린 은방울꽃이 줄기를 따라 피어오르는 패턴.
+        순수하고 맑은 느낌으로 물 한 잔의 시간을
+        조용히 특별하게 만들어 줍니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DETAIL ═══ -->
+<section class="split" style="direction:rtl;">
+  <div class="split-text fade-in" style="direction:ltr; background: var(--white);">
+    <div class="label">Detail</div>
+    <h2>빛이 통과하는<br>순간의 아름다움</h2>
+    <p>
+      크리스탈 표면에 정밀하게 새겨진 플로럴 패턴은
+      빛의 각도에 따라 다르게 반짝입니다.
+      <br><br>
+      아침 햇살 아래서, 저녁 캔들 옆에서 —
+      같은 잔이 매 순간 다른 표정을 보여줍니다.
+      0.8mm 세밀한 인그레이빙으로 촉감까지 섬세하게 설계했습니다.
+    </p>
+  </div>
+  <div class="split-image" style="direction:ltr;">
+    <div style="width:100%;height:100%;min-height:500px;background:linear-gradient(180deg, var(--dark) 0%, #2a2020 100%);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:60px;color:rgba(255,255,255,0.06);font-style:italic;">Crystal Detail</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EVERYDAY SCENE ═══ -->
+<section class="split">
+  <div class="split-image">
+    <div style="width:100%;height:100%;min-height:500px;background:var(--red);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:60px;color:rgba(255,255,255,0.1);font-style:italic;">Table Scene</span>
+    </div>
+  </div>
+  <div class="split-text fade-in" style="background: var(--cream);">
+    <div class="label">Everyday</div>
+    <h2>물 한 잔도<br>달라지는 테이블</h2>
+    <p>
+      와인이 아니어도 됩니다.
+      아침의 물 한 잔, 오후의 레모네이드, 저녁의 하이볼.
+      <br><br>
+      플로럴 워터 글라스는 무엇을 담아도
+      그 순간을 조금 더 감각적으로 만들어 줍니다.
+      200ml의 적당한 용량, 95g의 가벼운 무게.
+      매일 쓰기 좋은 크기와 무게로 설계했습니다.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ SPEC ═══ -->
+<section class="spec fade-in">
+  <div class="spec-inner">
+    <h2>Specification</h2>
+    <div class="spec-grid">
+      <div class="spec-item">
+        <div class="label">Material</div>
+        <div class="value">Lead-free Crystal</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Weight</div>
+        <div class="value">~95g</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Capacity</div>
+        <div class="value">200ml</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Size</div>
+        <div class="value">H 121 × W 75 mm</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Set</div>
+        <div class="value">2P (Kas + Muguet)</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Origin</div>
+        <div class="value">Designed in Korea</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Engraving</div>
+        <div class="value">Precision Floral Pattern</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Safety</div>
+        <div class="value">Lead-free Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GIFT PACKAGE ═══ -->
+<section class="gift fade-in">
+  <h2>Gift-ready Package</h2>
+  <p class="subtitle">별도 포장 없이, 그대로 선물이 됩니다</p>
+  <div class="gift-items">
+    <div class="gift-item">
+      <div class="icon">🎁</div>
+      <h4>선물 포장 서비스</h4>
+      <p>넥타 시그니처 패키지에<br>정성을 담아 전합니다</p>
+    </div>
+    <div class="gift-item">
+      <div class="icon">🥂</div>
+      <h4>워터 글라스 2P Set</h4>
+      <p>Kas + Muguet<br>두 송이를 한 세트로</p>
+    </div>
+    <div class="gift-item">
+      <div class="icon">💌</div>
+      <h4>보증서</h4>
+      <p>넥타 공식 보증서<br>동봉</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW TO CARE ═══ -->
+<section class="care fade-in">
+  <div class="care-inner">
+    <h2>How to Care</h2>
+    <div class="care-item">
+      <div class="num">01</div>
+      <p>크리스탈 제품은 전용 세정제나 글라스 클리너로 부드럽게 세척해 주세요. 식기세척기 사용은 권장하지 않습니다.</p>
+    </div>
+    <div class="care-item">
+      <div class="num">02</div>
+      <p>세척 시 미온수를 사용하고, 급격한 온도 변화에 노출되지 않도록 주의해 주세요.</p>
+    </div>
+    <div class="care-item">
+      <div class="num">03</div>
+      <p>물기를 부드러운 마른 천으로 닦아 자연 건조시키면 크리스탈 본연의 투명함을 오래 유지할 수 있습니다.</p>
+    </div>
+    <div class="care-item">
+      <div class="num">04</div>
+      <p>보관 시 잔끼리 직접 닿지 않도록 간격을 두어 보관해 주세요. 패키지 박스에 넣어 보관하시면 가장 안전합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+  <h2><em class="serif" style="font-style:italic;color:var(--gold);">Floral</em> Water Glass</h2>
+  <div class="price">₩32,000</div>
+  <div class="price-note">2P SET (Kas + Muguet) · 무료 배송</div>
+  <a href="https://nectarofficial.com/product/detail.html?product_no=38" class="cta-btn" target="_blank">구매하기</a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="brand">NECTAR</div>
+  <p>
+    Spread the message of authentic luxury living<br><br>
+    주식회사 아르피노 (ARFINO) · 대표 황수연<br>
+    서울특별시 강남구 강남대로 464<br>
+    사업자등록번호 367-88-03475<br><br>
+    <a href="mailto:hello@nectarofficial.com">hello@nectarofficial.com</a> · <a href="https://nectarofficial.com" target="_blank">nectarofficial.com</a><br>
+    <a href="https://www.instagram.com/nectarofficial_com/" target="_blank">Instagram @nectarofficial_com</a>
+  </p>
+</footer>
+
+<script>
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
